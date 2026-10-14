@@ -1,0 +1,37 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/levels/main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/levels/background.tscn" id="2_bg"]
+[ext_resource type="Script" path="res://scenes/levels/shake_camera.gd" id="3_camera"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="4_player"]
+[ext_resource type="Script" path="res://scenes/levels/wave_spawner.gd" id="5_spawner"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="6_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="7_pause"]
+[ext_resource type="PackedScene" path="res://scenes/ui/game_over_screen.tscn" id="8_gameover"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_main")
+
+[node name="Background" parent="." instance=ExtResource("2_bg")]
+
+[node name="ShakeCamera" type="Camera2D" parent="."]
+anchor_mode = 0
+script = ExtResource("3_camera")
+
+[node name="Player" parent="." instance=ExtResource("4_player")]
+position = Vector2(270, 820)
+
+[node name="WaveSpawner" type="Node" parent="."]
+script = ExtResource("5_spawner")
+
+[node name="WaveTimer" type="Timer" parent="WaveSpawner"]
+one_shot = true
+
+[node name="MeteorTimer" type="Timer" parent="WaveSpawner"]
+one_shot = true
+
+[node name="HUD" parent="." instance=ExtResource("6_hud")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("7_pause")]
+
+[node name="GameOverScreen" parent="." instance=ExtResource("8_gameover")]

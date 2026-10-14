@@ -1,0 +1,8 @@
+{
+    "godotTools.editorPath.godot4": "c:\\Users\\João Pedro\\Downloads\\Godot_v4.7.1-stable_win64.exe\\Godot_v4.7.1-stable_win64.exe",
+    "files.exclude": {
+        "**/*.import": true,
+        "**/*.uid": true,
+        ".godot": true
+    }
+}

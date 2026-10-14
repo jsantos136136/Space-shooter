@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/enemies/enemy.tscn" id="1_base"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Enemies/enemyRed4.png" id="2_tex"]
+
+[node name="EnemyKamikaze" instance=ExtResource("1_base")]
+speed = 150.0
+score_value = 200
+movement = 3
+dive_delay = 1.0
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_tex")

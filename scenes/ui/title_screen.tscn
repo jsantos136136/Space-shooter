@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://cbdt3elqxs4er"]
+
+[ext_resource type="Script" uid="uid://7iuwfkafs342" path="res://scenes/ui/title_screen.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://scenes/levels/background.tscn" id="2_bg"]
+[ext_resource type="Texture2D" uid="uid://dvhmm43ev8dg2" path="res://assets/sprites/playerShip1_blue.png" id="3_ship"]
+
+[node name="TitleScreen" type="Control" unique_id=574490009]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" parent="." unique_id=412373657 instance=ExtResource("2_bg")]
+
+[node name="Center" type="CenterContainer" parent="." unique_id=751100136]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center" unique_id=417456204]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Title" type="Label" parent="Center/VBox" unique_id=1435329906]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.85, 1, 1)
+theme_override_constants/line_spacing = -28
+theme_override_font_sizes/font_size = 52
+text = "SPACE
+SHOOTER"
+horizontal_alignment = 1
+
+[node name="ShipHolder" type="Control" parent="Center/VBox" unique_id=631786633]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="Ship" type="TextureRect" parent="Center/VBox/ShipHolder" unique_id=1878087319]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ship")
+stretch_mode = 5
+
+[node name="HighScoreLabel" type="Label" parent="Center/VBox" unique_id=52556717]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.3, 1)
+text = "RECORDE: 0"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="Center/VBox" unique_id=287816947]
+unique_name_in_owner = true
+layout_mode = 2
+text = "JOGAR"
+
+[node name="QuitButton" type="Button" parent="Center/VBox" unique_id=612063835]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SAIR"
+
+[node name="Controls" type="Label" parent="." unique_id=1294413462]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -110.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.7)
+theme_override_font_sizes/font_size = 15
+text = "WASD / SETAS: MOVER
+ESPACO / J: ATIRAR
+ESC / P: PAUSAR"
+horizontal_alignment = 1
+vertical_alignment = 2

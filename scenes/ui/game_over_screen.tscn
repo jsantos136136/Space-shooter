@@ -1,0 +1,65 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/game_over_screen.gd" id="1_script"]
+
+[node name="GameOverScreen" type="CanvasLayer"]
+layer = 9
+script = ExtResource("1_script")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Dim" type="ColorRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.65)
+
+[node name="Center" type="CenterContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="Root/Center"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="Root/Center/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.35, 0.3, 1)
+theme_override_font_sizes/font_size = 48
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="Root/Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "PONTOS: 0"
+horizontal_alignment = 1
+
+[node name="RecordLabel" type="Label" parent="Root/Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.3, 1)
+text = "RECORDE: 0"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Root/Center/VBox"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="RetryButton" type="Button" parent="Root/Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "JOGAR DE NOVO"
+
+[node name="MenuButton" type="Button" parent="Root/Center/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "MENU"

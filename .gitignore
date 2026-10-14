@@ -1,0 +1,12 @@
+# Godot 4 cache/import data (regenerated automatically)
+.godot/
+
+# Builds exportados
+build/
+
+# Credenciais de export (nunca versionar)
+export_credentials.cfg
+
+# Arquivos temporarios
+*.tmp
+_downloads/

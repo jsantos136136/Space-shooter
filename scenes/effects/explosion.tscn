@@ -1,0 +1,67 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/effects/explosion.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Effects/star3.png" id="2_spark"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Meteors/meteorGrey_tiny1.png" id="3_debris"]
+
+[sub_resource type="Gradient" id="Gradient_glow"]
+colors = PackedColorArray(1, 0.95, 0.75, 1, 1, 0.45, 0.1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_glow"]
+gradient = SubResource("Gradient_glow")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_sparks"]
+offsets = PackedFloat32Array(0, 0.35, 1)
+colors = PackedColorArray(1, 1, 0.85, 1, 1, 0.6, 0.15, 1, 0.8, 0.15, 0.05, 0)
+
+[sub_resource type="Gradient" id="Gradient_debris"]
+colors = PackedColorArray(0.85, 0.8, 0.75, 1, 0.4, 0.35, 0.35, 0)
+
+[node name="Explosion" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="Flash" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_glow")
+
+[node name="Sparks" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 22
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("2_spark")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 90.0
+initial_velocity_max = 260.0
+angular_velocity_min = -360.0
+angular_velocity_max = 360.0
+damping_min = 120.0
+damping_max = 200.0
+scale_amount_min = 0.25
+scale_amount_max = 0.7
+color_ramp = SubResource("Gradient_sparks")
+
+[node name="Debris" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 6
+lifetime = 0.9
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("3_debris")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 120.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+damping_min = 30.0
+damping_max = 60.0
+scale_amount_min = 0.5
+scale_amount_max = 1.0
+color_ramp = SubResource("Gradient_debris")

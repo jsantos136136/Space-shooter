@@ -1,0 +1,74 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/hud.gd" id="1_script"]
+
+[node name="HUD" type="CanvasLayer"]
+layer = 5
+script = ExtResource("1_script")
+
+[node name="Top" type="HBoxContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = -16.0
+offset_bottom = 48.0
+
+[node name="ScoreLabel" type="Label" parent="Top"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "000000"
+
+[node name="HighScoreLabel" type="Label" parent="Top"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85, 0.3, 1)
+theme_override_font_sizes/font_size = 20
+text = "HI 000000"
+horizontal_alignment = 2
+
+[node name="LivesBox" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+offset_left = 16.0
+offset_top = 54.0
+offset_right = 300.0
+offset_bottom = 82.0
+theme_override_constants/separation = 6
+
+[node name="BossPanel" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 80.0
+offset_top = 92.0
+offset_right = -80.0
+offset_bottom = 140.0
+
+[node name="BossLabel" type="Label" parent="BossPanel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.4, 0.35, 1)
+theme_override_font_sizes/font_size = 16
+text = "CHEFE"
+horizontal_alignment = 1
+
+[node name="BossBar" type="ProgressBar" parent="BossPanel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+value = 100.0
+show_percentage = false
+
+[node name="WaveLabel" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 14
+anchor_top = 0.4
+anchor_right = 1.0
+anchor_bottom = 0.4
+offset_top = -40.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 44
+text = "ONDA 1"
+horizontal_alignment = 1
+vertical_alignment = 1
